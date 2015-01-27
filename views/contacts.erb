@@ -1,0 +1,36 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<% @contacts.each do |contact| %>
+	<li>
+	<@contac<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>View All Contacts</title>
+  </head>
+  <body>
+    <h1>Contacts</h1>
+
+    <ul>
+    	<!-- $rolodex -->
+      <% @contacts.each do |contact| %>
+        <li>
+          <%= contact.first_name %> <%= contact.last_name %>
+           <%= contact.email %> <%= contact.note %>
+        </li>
+      <% end %>
+
+      <li>
+        <a href="/contacts/new">Add a contact</a>
+      </li>
+    </ul>
+  </body>
+</html>
+	</li>
+</body>
+</html>
