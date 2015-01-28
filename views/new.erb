@@ -1,18 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>New Contact</title>
-</head>
-<body>
-	<h1>New Contact</h1>
-	<form action="/contacts" method ="post">
-		<input type="text" name="first_name">
-		<input type="text" name="last_name">
-		<input type="text" name="email">
-		<input type="text" name="note">
+	<main>
+	<h2 class = "titleposition">New Contact</h2>
 
-		<input type ="submit">
+	<form action="/contacts" method ="post">
+
+		<h3 class = "addcontact-desc">Please Enter Your First Name<br>
+			<input type="text" name="first_name" class = "newpadding">
+		</h3><br>
+
+		<h3 class = "addcontact-desc">Please Enter Your Last Name<br>
+			<input type="text" name="last_name" class = "newpadding">
+		</h3><br>
+		
+		<h3 class = "addcontact-desc">Please Enter Your Email<br>
+			<input type="text" name="email" class = "newpadding">
+		</h3><br>
+
+		<h3 class = "addcontact-desc">Please Enter Your Notes<br>
+			<input type="text" name="note" class = "newpadding">
+		</h3><br>
+
+			<div id = "submit-contact">
+			<input type ="submit" class = "submit-button">
+			</div>
 	</form>
-</body>
-</html>
+	</main>

@@ -1,0 +1,110 @@
+/* Layout Page */
+/* Nav Bar */
+body {
+	background-color: #F7F7F7;
+}
+
+a {
+  color: #acb7c0;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navtitles a {
+  color: #5a5a5a;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 20px 30px;
+  text-transform: uppercase;
+   
+}
+
+.navtitles li {
+ 	 display: inline;
+}
+
+/*Picture*/
+
+.jumbotron {
+  background-image:url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQANq4xTyNBZiVLFj3oFP036jBE0YlJKEoPxiMyvnDuaZAKSiQ_MA);
+  height: 150px;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  font-size: 50px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+  position:absolute;
+  top: -100px;
+  left: 200px;
+}
+
+
+.titleposition {
+	font-size: 40px;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	position: absolute:;
+    top: 185px;
+    left: 500px;
+    text-align: center;
+}
+
+/*titlepage*/
+.welcomepage{
+	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+	font-family: "Open Sans", sans-serif;
+}
+.crminfo {
+	text-align: center;
+	font-size: 25px;
+	font-family: "Open Sans", sans-serif;
+}
+
+.footer {
+	text-align: right;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+}
+
+/*new.erb style*/
+.addcontact-desc {
+	font-size: 12px;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+
+.newpadding {
+	width: 200px;
+}
+
+#submit-contact{
+	text-align: center;
+
+}
+
+/*View all contacts style*/
+
+.listcontact {
+	font-size: 20px;
+	font-family: "Shift", sans-serif;
+	display: inline;
+	text-align: center;
+}
+
+.listinfo {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+

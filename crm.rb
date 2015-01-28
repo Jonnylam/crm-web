@@ -5,6 +5,7 @@ require 'sinatra/reloader'
 
 # set :server, :webrick
 
+#Put error out in the HTML file if it occurs
 disable :raise_errors
 disable :show_exceptions
 
@@ -22,15 +23,19 @@ $rolodex = Rolodex.new
 
 get '/' do
   @crm_name = "My CRM"
+  @title = "CRM"
   erb :index
+
 end
 
 get '/contacts' do
   @contacts = $rolodex.contacts
+  @title = "View All Contacts"
   erb :contacts
 end
 
 get '/contacts/new' do
+  @title = "Add a contact"
   erb :new
 end
 
@@ -39,6 +44,7 @@ post '/contacts' do
   $rolodex.add_contact(contact)
   redirect to('/contacts')
 end
+
 
 
 
