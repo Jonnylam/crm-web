@@ -72,11 +72,17 @@ a {
 .footer {
 	text-align: right;
 	position: fixed;
-	bottom: 0px;
-	right: 0px;
+	bottom: 50px;
+	right: 50px;
 }
 
 /*new.erb style*/
+
+.datepadding{
+	width: 100px;
+
+}
+
 .addcontact-desc {
 	font-size: 12px;
 	font-family: "Open Sans", sans-serif;
@@ -84,8 +90,10 @@ a {
 	text-align: center;
 }
 
+/*Width and height of input box but not working*/
 .newpadding {
-	width: 200px;
+	width: 900px;
+	height: 200px;
 }
 
 #submit-contact{

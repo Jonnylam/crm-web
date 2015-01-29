@@ -2,25 +2,70 @@
 	<h2 class = "titleposition">New Contact</h2>
 
 	<form action="/contacts" method ="post">
-
-		<h3 class = "addcontact-desc">Please Enter Your First Name<br>
-			<input type="text" name="first_name" class = "newpadding">
+	<!-- 	form action specifies where you send that request.  Method tribute changes the form to a post request -->
+		
+		<h3 class = "addcontact-desc">
+			<label for="date">Date:</label>
+				<input id = "date" type="date" name="date" class = "datepadding">
 		</h3><br>
 
-		<h3 class = "addcontact-desc">Please Enter Your Last Name<br>
-			<input type="text" name="last_name" class = "newpadding">
+
+		<h3 class = "addcontact-desc">
+			<label for="firstname">First Name:</label>
+				<input id = "firstname" type="text" name="first_name" class = "newpadding" placeholder = "e.g. Jon">
+		</h3><br>
+
+		<h3 class = "addcontact-desc">
+			<label for="lastname">Last Name:</label>
+				<input type="text" id = "lastname" name="last_name" class = "newpadding">
 		</h3><br>
 		
-		<h3 class = "addcontact-desc">Please Enter Your Email<br>
-			<input type="text" name="email" class = "newpadding">
+		<h3 class = "addcontact-desc">
+			<label for="email">Email:</label>
+				<input type="text" id = "email" name="email" class = "newpadding" placeholder ="e.g. Johndoe@gmail.com">
 		</h3><br>
 
-		<h3 class = "addcontact-desc">Please Enter Your Notes<br>
-			<input type="text" name="note" class = "newpadding">
+		<h3 class = "addcontact-desc">
+			<label for="notes">Notes:</label>
+				<input type="text" id = "notes" name="note" class = "newpadding">	
 		</h3><br>
+<!-- 		
+		<fieldset>
+
+			<h3 class = "addcontact-desc">
+
+				<legend>How do you know the contact?</legend>
+
+				<label>
+					Friend    
+					<input type = "radio" name="genre" value = "friend">
+				</label>
+
+				<label>
+					Colleague   
+					<input type = "radio" name="genre"  value = "colleague">
+				</label>
+
+				<label>
+					Work   
+					<input type = "radio" name="genre"  value = "work">
+				</label>
+
+				<label>
+					Family   
+					<input type = "radio" name="genre"  value = "family">
+				</label>
+
+				<label>
+					Other    
+					<input type = "radio" name="genre"  value = "other">
+				</label>
+			</h3>
+		</fieldset> -->
 
 			<div id = "submit-contact">
-			<input type ="submit" class = "submit-button">
+				<input type ="submit" class = "submit-button">
 			</div>
 	</form>
+	<br><br><br>
 	</main>

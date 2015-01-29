@@ -1,0 +1,23 @@
+<main>
+	<h2 class = "titleposition">Search a contact by ID</h2>
+
+		<form action="/contacts/show_contacts" method ="post">
+	<!-- 	form action specifies where you send that request.  Method tribute changes the form to a post request -->
+		
+		<h3 class = "addcontact-desc">
+			<label for="id">Please input ID number</label>
+				<input id = "id" type="text" name="id">
+		</h3><br>
+		
+
+	
+		<div id = "submit-contact">
+				<input type ="submit" class = "submit-button">
+		</div>
+		</form>
+</main>
+<!-- 	def display_one
+		puts "Enter id:"
+		contact_id = gets.chomp.to_i
+		puts @rolodex.find_contact(contact_id)
+	end -->
