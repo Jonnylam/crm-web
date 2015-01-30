@@ -36,9 +36,6 @@ DataMapper.auto_upgrade!
 
 #End of data mapper setup
 
-$rolodex = Rolodex.new
-
-
 
 
 # set :server, :webrick
@@ -66,22 +63,25 @@ disable :show_exceptions
 
   end
 
-  get '/contacts' do
-    @contacts = $rolodex.contacts
-    @title = "View All Contacts"
-    erb :contacts
-  end
+get "/contacts" do
+  @contacts = Contact.all
+  erb :contacts
+end
 
   get '/contacts/new' do
     @title = "Add a contact"
     erb :new
   end
 
-  post '/contacts' do
-    contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
-    $rolodex.add_contact(contact)
-    redirect to('/contacts')
-  end
+post "/contacts" do
+  contact = Contact.create(
+    :first_name => params[:first_name],
+    :last_name => params[:last_name],
+    :email => params[:email],
+    :note => params[:note]
+  )
+  redirect to('/contacts')
+end
 
 
 
@@ -89,7 +89,7 @@ disable :show_exceptions
     @title = "Find a contact"
     puts "*****#{params.inspect}*****"
     params[:search]
-    @contact = $rolodex.find(params[:search].to_i)
+    @contact = Contact.get(params[:search])
     if @contact
       #Do I need to redirect to the contact/:id page?
       erb :show_contact
@@ -131,7 +131,8 @@ disable :show_exceptions
   # end
 
 get "/contacts/:id" do
-  @contact = $rolodex.find(params[:id].to_i)
+  # @contact = $rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id])
   if @contact
     erb :show_contact
   else
@@ -140,7 +141,7 @@ get "/contacts/:id" do
 end
 
 get "/contacts/:id/edit" do
-  @contact = $rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id])
   if @contact
     erb :edit_contact
   else
@@ -149,13 +150,13 @@ get "/contacts/:id/edit" do
 end
 
 put "/contacts/:id" do
-  @contact = $rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id])
   if @contact
     @contact.first_name = params[:first_name]
     @contact.last_name = params[:last_name]
     @contact.email = params[:email]
     @contact.note = params[:note]
-
+    @contact.save
     redirect to("/contacts")
   else
     raise Sinatra::NotFound
@@ -163,9 +164,10 @@ put "/contacts/:id" do
 end
 
 delete "/contacts/:id" do
-  @contact = $rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id])
   if @contact
-    $rolodex.remove_contact(@contact)
+    # $rolodex.remove_contact(@contact)
+    @contact.destroy
     redirect to("/contacts")
   else
     raise Sinatra::NotFound
