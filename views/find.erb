@@ -1,0 +1,13 @@
+
+	<h1>Search: <%= contacts %></h1>
+	
+	<div class="cf">
+	<% $rolodex.contacts.each do |contact| %>
+	  <dl>
+		  <dt><%= contact.first_name.capitalize %> <%= contact.last_name.capitalize %></dt>
+	  	<dd><%= contact.email %></dd>
+	  	<dd><%= contact.note %></dd>
+	  </dl>
+	<% end %>
+	</div>
+
